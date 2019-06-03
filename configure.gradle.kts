@@ -4,6 +4,9 @@ extra["base_version"] = "1.3"
 extra["artifact_name"] = "runtime"
 extra["artifact_group"] = "com.eaglesakura.armyknife"
 
+/**
+ * Auto configure.
+ */
 extra["artifact_version"] = System.getenv("CIRCLE_TAG").let { CIRCLE_TAG ->
     val majorMinor = if (CIRCLE_TAG.isNullOrEmpty()) {
         rootProject.extra["base_version"] as String
