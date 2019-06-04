@@ -19,6 +19,7 @@ plugins {
 }
 
 repositories {
+    mavenLocal()
     google()
     jcenter()
     mavenCentral()
@@ -45,4 +46,5 @@ compileTestKotlin.kotlinOptions {
 }
 
 apply(from = "configure.gradle.kts")
+apply(from = "dsl/ktlint.gradle")
 apply(from = "dsl/bintray-jvm.gradle")

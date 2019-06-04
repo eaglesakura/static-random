@@ -87,5 +87,5 @@ suspend fun <E> Channel<E>.receiveOrError(): E {
 }
 
 internal class ErrorCancelException(
-        override val cause: Throwable
+    override val cause: Throwable
 ) : CancellationException()

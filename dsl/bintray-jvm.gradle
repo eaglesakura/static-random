@@ -1,11 +1,8 @@
 group = artifact_group
 version = artifact_version
 
-if (project.hasProperty("install_snapshot")) {
-    apply plugin: 'maven'
-} else {
-    apply plugin: 'com.jfrog.bintray'
-}
+apply plugin: 'maven'
+apply plugin: 'com.jfrog.bintray'
 apply plugin: 'org.jetbrains.dokka'
 
 dokka {

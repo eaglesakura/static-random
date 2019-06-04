@@ -6,7 +6,6 @@ internal object Base64Impl {
 
     val stringToByteArray: (str: String) -> ByteArray
 
-
     private const val ANDROID_URL_SAFE = 8
 
     private const val ANDROID_NO_WRAP = 2
@@ -29,8 +28,12 @@ internal object Base64Impl {
             // for Android
             val encodeToString = androidBase64.getMethod("encodeToString")
             val decode = androidBase64.getMethod("decode")
-            byteArrayToString = { bytArray -> encodeToString.invoke(androidBase64, bytArray, ANDROID_FLAG) as String }
-            stringToByteArray = { str -> decode.invoke(androidBase64, str, ANDROID_FLAG) as ByteArray }
+            byteArrayToString = { bytArray ->
+                encodeToString.invoke(androidBase64, bytArray, ANDROID_FLAG) as String
+            }
+            stringToByteArray = { str ->
+                decode.invoke(androidBase64, str, ANDROID_FLAG) as ByteArray
+            }
         } else {
             // for JVM
             byteArrayToString =

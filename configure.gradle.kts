@@ -1,8 +1,11 @@
 import java.nio.charset.Charset
 
 extra["base_version"] = "1.3"
-extra["artifact_name"] = "runtime"
+extra["artifact_name"] = "armyknife-runtime"
 extra["artifact_group"] = "com.eaglesakura.armyknife"
+extra["bintray_user"] = "eaglesakura"
+extra["bintray_labels"] = arrayOf("android", "kotlin")
+extra["bintray_vcs_url"] = "https://github.com/eaglesakura/army-knife-runtime"
 
 /**
  * Auto configure.
@@ -26,7 +29,3 @@ extra["artifact_version"] = System.getenv("CIRCLE_TAG").let { CIRCLE_TAG ->
     }
 }.trim()
 
-
-extra["bintray_user"] = "eaglesakura"
-extra["bintray_labels"] = arrayOf("android", "kotlin")
-extra["bintray_vcs_url"] = "https://github.com/eaglesakura/${rootProject.file(".").name}"
