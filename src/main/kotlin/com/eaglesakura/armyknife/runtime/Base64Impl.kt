@@ -26,8 +26,8 @@ internal object Base64Impl {
 
         if (androidBase64 != null) {
             // for Android
-            val encodeToString = androidBase64.getMethod("encodeToString")
-            val decode = androidBase64.getMethod("decode")
+            val encodeToString = androidBase64.getMethod("encodeToString", ByteArray::class.java, Int::class.java)
+            val decode = androidBase64.getMethod("decode", ByteArray::class.java, Int::class.java)
             byteArrayToString = { bytArray ->
                 encodeToString.invoke(androidBase64, bytArray, ANDROID_FLAG) as String
             }
