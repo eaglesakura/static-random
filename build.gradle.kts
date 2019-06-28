@@ -1,8 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
-    extra["kotlin_version"] = "1.3.31"
-    extra["kotlin_coroutines_version"] = "1.2.0"
+    extra["kotlin_version"] = "1.3.40"
+    extra["kotlin_coroutines_version"] = "1.2.2"
     repositories {
         google()
         jcenter()

@@ -1,14 +1,47 @@
 package com.eaglesakura.armyknife.runtime.extensions
 
 import com.eaglesakura.armyknife.runtime.Base64Impl
+import java.security.MessageDigest
 
 /**
  * Byte array to base64 encoded string.
  *
  * @author @eaglesakura
- * @link https://github.com/eaglesakura/army-knife
+ * @link https://github.com/eaglesakura/armyknife-runtime
  */
 fun ByteArray.encodeBase64(): String = Base64Impl.byteArrayToString(this)
+
+/**
+ * Byte array to MD5 encoded string.
+ *
+ * @author @eaglesakura
+ * @link https://github.com/eaglesakura/armyknife-runtime
+ */
+fun ByteArray.encodeMD5(): String = MessageDigest.getInstance("MD5").digest(this).toHexString()
+
+/**
+ * Byte array to SHA1 encoded string.
+ *
+ * @author @eaglesakura
+ * @link https://github.com/eaglesakura/armyknife-runtime
+ */
+fun ByteArray.encodeSHA1(): String = MessageDigest.getInstance("SHA-1").digest(this).toHexString()
+
+/**
+ * Byte array to SHA1 encoded string.
+ *
+ * @author @eaglesakura
+ * @link https://github.com/eaglesakura/armyknife-runtime
+ */
+fun ByteArray.encodeSHA256(): String = MessageDigest.getInstance("SHA-256").digest(this).toHexString()
+
+/**
+ * Byte array to SHA1 encoded string.
+ *
+ * @author @eaglesakura
+ * @link https://github.com/eaglesakura/armyknife-runtime
+ */
+fun ByteArray.encodeSHA512(): String = MessageDigest.getInstance("SHA-512").digest(this).toHexString()
 
 /**
  * Byte array to hex string.
@@ -18,7 +51,7 @@ fun ByteArray.encodeBase64(): String = Base64Impl.byteArrayToString(this)
  * example) [0x01, 0x02, FF] -> "0102ff"
  *
  * @author @eaglesakura
- * @link https://github.com/eaglesakura/army-knife
+ * @link https://github.com/eaglesakura/armyknife-runtime
  */
 fun ByteArray.toHexString(): String {
     val sBuffer = StringBuffer(size * 2)
