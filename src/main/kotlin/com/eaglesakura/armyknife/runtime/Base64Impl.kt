@@ -15,7 +15,7 @@ internal object Base64Impl {
     private const val ANDROID_NO_CLOSE = 16
 
     private const val ANDROID_FLAG =
-            ANDROID_NO_CLOSE or ANDROID_NO_PADDING or ANDROID_NO_WRAP or ANDROID_URL_SAFE
+            /* ANDROID_NO_CLOSE or ANDROID_NO_PADDING or */ ANDROID_NO_WRAP or ANDROID_URL_SAFE
 
     init {
         val androidBase64 = try {
