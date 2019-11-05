@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit
  * val dispatcher = FlexibleThreadPoolDispatcher.newDispatcher(4, 1, TimeUnit.SECONDS)  // 4thread, 1seconds auto-scale dispatcher.
  *
  * @author @eaglesakura
- * @link https://github.com/eaglesakura/army-knife
+ * @link https://github.com/eaglesakura/armyknife-runtime
  */
 object FlexibleThreadPoolDispatcher {
 
