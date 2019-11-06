@@ -2,6 +2,7 @@ package com.eaglesakura.armyknife.runtime.extensions
 
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
 import java.time.Duration
@@ -58,12 +59,21 @@ public suspend fun <T> withChildContext(
     block: suspend CoroutineScope.() -> T
 ): T {
     val scope = CoroutineScope(coroutineContext)
-    val deferred = scope.async(context) {
-        block(this)
+    val deferred: Deferred<Pair<Any?, Throwable?>> = scope.async(context) {
+        try {
+            Pair(block(this), null)
+        } catch (e: Throwable) {
+            Pair(Unit, e)
+        }
     }
 
     try {
-        return deferred.await()
+        return deferred.await().let {
+            if (it.second != null) {
+                throw it.second!!
+            }
+            it.first as T
+        }
     } catch (e: CancellationException) {
         deferred.cancel(CancellationException("withContextChild(context=$context/$e)"))
         throw e
