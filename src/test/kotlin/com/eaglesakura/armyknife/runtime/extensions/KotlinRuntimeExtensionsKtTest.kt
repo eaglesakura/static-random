@@ -4,7 +4,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class RuntimeExtensionsKtTest {
+class KotlinRuntimeExtensionsKtTest {
 
     @Test
     fun withRetry_noFail() = runBlocking {
