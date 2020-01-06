@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
-    extra["kotlin_version"] = "1.3.50"
+    extra["kotlin_version"] = "1.3.61"
     extra["kotlin_coroutines_version"] = "1.3.2"
     repositories {
         google()
@@ -15,7 +15,7 @@ buildscript {
 }
 
 plugins {
-    kotlin("jvm") version "1.3.50"
+    kotlin("jvm") version "${extra["kotlin_version"]}"
 }
 
 repositories {
