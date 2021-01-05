@@ -1,1 +1,1 @@
-rootProject.name = "armyknife-runtime"
+include(":armyknife-runtime")

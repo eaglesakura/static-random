@@ -1,0 +1,6 @@
+apply from: rootProject.file("scripts/build-kotlin-library.gradle")
+apply from: rootProject.file("scripts/deploy-bintray-jvm.gradle")
+
+dependencies {
+
+}
