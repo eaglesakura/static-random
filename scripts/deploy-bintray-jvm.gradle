@@ -60,5 +60,6 @@ bintray {
             }
         }
         configurations = ['archives']
+        publications = ['release']
     }
 }
