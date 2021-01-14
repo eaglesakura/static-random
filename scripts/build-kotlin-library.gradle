@@ -4,10 +4,16 @@ group "${artifact.base_group}.${project.name}"
 version artifact.deploy_version
 
 compileKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions {
+        jvmTarget = "1.8"
+        useIR = true
+    }
 }
 compileTestKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions {
+        jvmTarget = "1.8"
+        useIR = true
+    }
 }
 
 dependencies {
