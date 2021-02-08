@@ -75,3 +75,5 @@ publishing {
 signing {
     sign publishing.publications.release
 }
+
+println("artifact \"${project.group}:${project.name}:${project.version}\"")

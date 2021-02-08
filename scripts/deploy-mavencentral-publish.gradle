@@ -1,12 +1,3 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.22.0"
-    }
-}
-
 ext."nexusUsername" = "${System.env.MAVENCENTRAL_USERNAME}"
 ext."nexusPassword" = "${System.env.MAVENCENTRAL_PASSWORD}"
 

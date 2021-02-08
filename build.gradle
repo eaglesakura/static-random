@@ -10,14 +10,6 @@ buildscript {
                 base_group      : "com.example.artifact.group",
                 dynamic_group_id: true,
         ]
-        bintray_configs = [
-                user           : "user-name",
-                labels         : ["kotlin", "android"],
-                repository_name: "repo",
-                vcs_url        : "https://example.com/vcs",
-                issues_url     : "https://example.com/vcs/issues",
-                licenses       : ["MIT"],
-        ]
         mavencentral = [
                 repository_url : "https://oss.sonatype.org/content/repositories/snapshots",
                 license_name   : "",
@@ -37,7 +29,6 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:1.4.10.2"
         classpath "com.github.ben-manes:gradle-versions-plugin:0.33.0"
-        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5"
         classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.22.0"
     }
 }

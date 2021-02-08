@@ -16,7 +16,6 @@ artifact["deploy_version"] = run {
 
     val majorMinor = artifact["base_version"] as String
     return@run when {
-//        GITHUB_RUN_NUMBER?.toIntOrNull() != null -> "0.$GITHUB_RUN_NUMBER-SNAPSHOT"
         hasProperty("install_snapshot") -> "$majorMinor.99999"
         else -> "${majorMinor}-SNAPSHOT"
     }
