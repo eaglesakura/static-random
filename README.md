@@ -2,25 +2,15 @@
 
 Library for android applications with Kotlin.
 
-armyknife is small library, but it can be more small.
-If you have to shrink to application, then proguard-options set to enable.
+armyknife is small library, but it can be more small. If you have to shrink to application, then proguard-options set to
+enable.
 
 # how to implementation into your project
 
 ```groovy
-// /build.gradle
-allprojects {
-    repositories {
-        // add the below line into build.gradle.
-        maven { url 'https://dl.bintray.com/eaglesakura/maven/' }
-    }
-}
-
-// /app/build.gradle
+// build.gradle
 dependencies {
-    // check versions
-    // https://github.com/eaglesakura/army-knife/releases
-    implementation 'com.eaglesakura.armyknife:armyknife-runtime:${replace version}'
+    implementation 'io.github.eaglesakura.armyknife-runtime:armyknife-runtime:${replace version}'
 }
 ```
 
@@ -36,5 +26,5 @@ repositories {
 }
 
 // replace version("major.minor.99999")
-implementation 'com.eaglesakura.armyknife:armyknife-runtime:${replace version}'
+implementation 'io.github.eaglesakura.armyknife-runtime:armyknife-runtime:${replace version}'
 ```
