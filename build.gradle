@@ -5,9 +5,10 @@ buildscript {
                 kotlin_coroutines: "1.4.1",
         ]
         artifact = [
-                deploy_version: "1.0-SNAPSHOT",
-                base_version  : "1.0",
-                base_group    : "com.example.artifact.group"
+                deploy_version  : "1.0-SNAPSHOT",
+                base_version    : "1.0",
+                base_group      : "com.example.artifact.group",
+                dynamic_group_id: true,
         ]
         bintray_configs = [
                 user           : "user-name",
@@ -16,6 +17,14 @@ buildscript {
                 vcs_url        : "https://example.com/vcs",
                 issues_url     : "https://example.com/vcs/issues",
                 licenses       : ["MIT"],
+        ]
+        mavencentral = [
+                repository_url : "https://oss.sonatype.org/content/repositories/snapshots",
+                license_name   : "",
+                license_url    : "",
+                vcs_url        : "https://example.com/vcs",
+                pom_description: "",
+                package_group  : "",
         ]
     }
     repositories {
@@ -29,6 +38,7 @@ buildscript {
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:1.4.10.2"
         classpath "com.github.ben-manes:gradle-versions-plugin:0.33.0"
         classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5"
+        classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.22.0"
     }
 }
 
@@ -37,12 +47,14 @@ allprojects {
         mavenLocal()
         google()
         mavenCentral()
+        jcenter()
     }
 }
 
 apply from: rootProject.file('build.properties.gradle')
 apply from: rootProject.file('scripts/configure.gradle.kts')
+apply from: rootProject.file("scripts/deploy-mavencentral-publish.gradle")
 
 println("${project.name}.versions.$versions")
 println("${project.name}.artifact.$artifact")
-println("${project.name}.bintray_configs.$bintray_configs")
+println("${project.name}.mavencentral.$mavencentral")
