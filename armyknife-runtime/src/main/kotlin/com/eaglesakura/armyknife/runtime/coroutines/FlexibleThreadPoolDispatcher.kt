@@ -19,7 +19,7 @@ import kotlinx.coroutines.asCoroutineDispatcher
  * @author @eaglesakura
  * @link https://github.com/eaglesakura/armyknife-runtime
  */
-@Deprecated("split to 'io.github.eaglesakura.kotlin-dispatchers-plus'")
+@Deprecated("split to 'io.github.eaglesakura.kotlin-utils'")
 object FlexibleThreadPoolDispatcher {
 
     /**
@@ -40,20 +40,24 @@ object FlexibleThreadPoolDispatcher {
     /**
      * for Device input/output dispatcher.
      */
-    val IO = newDispatcher(
-        Runtime.getRuntime().availableProcessors() * 2 + 1,
-        5,
-        TimeUnit.SECONDS
-    )
+    val IO: CoroutineDispatcher by lazy {
+        newDispatcher(
+            Runtime.getRuntime().availableProcessors() * 2 + 1,
+            5,
+            TimeUnit.SECONDS
+        )
+    }
 
     /**
      * for Network fetch dispatcher.
      */
-    val Network = newDispatcher(
-        Runtime.getRuntime().availableProcessors() * 2 + 1,
-        5,
-        TimeUnit.SECONDS
-    )
+    val Network: CoroutineDispatcher by lazy {
+        newDispatcher(
+            Runtime.getRuntime().availableProcessors() * 2 + 1,
+            5,
+            TimeUnit.SECONDS
+        )
+    }
 }
 
 private class FlexibleThreadPoolExecutor(
