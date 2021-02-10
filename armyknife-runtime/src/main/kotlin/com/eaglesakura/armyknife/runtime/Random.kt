@@ -7,6 +7,7 @@ package com.eaglesakura.armyknife.runtime
  * @link https://github.com/eaglesakura/armyknife-runtime
  */
 @Suppress("MemberVisibilityCanBePrivate", "unused")
+@Deprecated("split to 'io.github.eaglesakura.kotlin-utils'")
 object Random {
 
     @JvmStatic
