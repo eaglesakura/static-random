@@ -1,30 +1,21 @@
 # What is this repository?
 
-Library for android applications with Kotlin.
+Random value generator with Kotlin.
 
-armyknife is small library, but it can be more small. If you have to shrink to application, then proguard-options set to
-enable.
+# Example.
 
-# how to implementation into your project
+```kotlin
+fun example() {
+    Random.int8()       // signed 8bit
+    Random.string(32)   // 32 chars.
+}
+```
+
+# How to Install
 
 ```groovy
 // build.gradle
 dependencies {
-    implementation 'io.github.eaglesakura.armyknife-runtime:armyknife-runtime:${replace version}'
+    implementation 'io.github.eaglesakura.static-random:static-random:${replace version}'
 }
-```
-
-## Dev / LocalInstall
-
-```sh
-./gradlew -Pinstall_snapshot build uploadArchives
-```
-
-```groovy
-repositories {
-    mavenLocal()
-}
-
-// replace version("major.minor.99999")
-implementation 'io.github.eaglesakura.armyknife-runtime:armyknife-runtime:${replace version}'
 ```

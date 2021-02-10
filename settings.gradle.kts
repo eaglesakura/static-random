@@ -1,1 +1,1 @@
-include(":armyknife-runtime")
+include(":static-random")

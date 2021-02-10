@@ -1,13 +1,12 @@
-package com.eaglesakura.armyknife.runtime
+package io.github.eaglesakura.static_random
 
 /**
  * Returns random value.
  *
  * @author @eaglesakura
- * @link https://github.com/eaglesakura/armyknife-runtime
+ * @link https://github.com/eaglesakura/static-random
  */
 @Suppress("MemberVisibilityCanBePrivate", "unused")
-@Deprecated("split to 'io.github.eaglesakura.static-random'")
 object Random {
 
     @JvmStatic
@@ -119,7 +118,7 @@ object Random {
      */
     @JvmStatic
     fun smallString(): String {
-        return string(6) + (Random.uint16().toInt() and 0xFF)
+        return string(6) + (uint16().toInt() and 0xFF)
     }
 
     /**
