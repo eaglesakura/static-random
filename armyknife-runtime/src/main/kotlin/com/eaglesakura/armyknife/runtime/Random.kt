@@ -99,7 +99,7 @@ object Random {
      * Returns random strings.
      *
      * @author @eaglesakura
-     * @link https://github.com/eaglesakura/army-knife
+     * @link https://github.com/eaglesakura/armyknife-runtime
      */
     @JvmStatic
     fun string(length: Int = 32): String {
@@ -125,7 +125,7 @@ object Random {
      * Returns random large strings(1024 chars).
      *
      * @author @eaglesakura
-     * @link https://github.com/eaglesakura/army-knife
+     * @link https://github.com/eaglesakura/armyknife-runtime
      */
     @JvmStatic
     fun largeString(): String {
