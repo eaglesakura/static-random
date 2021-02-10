@@ -7,7 +7,7 @@ package com.eaglesakura.armyknife.runtime
  * @link https://github.com/eaglesakura/armyknife-runtime
  */
 @Suppress("MemberVisibilityCanBePrivate", "unused")
-@Deprecated("split to 'io.github.eaglesakura.kotlin-utils'")
+@Deprecated("split to 'io.github.eaglesakura.static-random'")
 object Random {
 
     @JvmStatic
@@ -115,7 +115,7 @@ object Random {
      * Returns random short strings(less than 10chars).
      *
      * @author @eaglesakura
-     * @link https://github.com/eaglesakura/army-knife
+     * @link https://github.com/eaglesakura/armyknife-runtime
      */
     @JvmStatic
     fun smallString(): String {
