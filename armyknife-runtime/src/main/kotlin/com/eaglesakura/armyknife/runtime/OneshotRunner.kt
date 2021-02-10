@@ -20,8 +20,9 @@ import kotlin.concurrent.withLock
  * }
  *
  * @author @eaglesakura
- * @link https://github.com/eaglesakura/army-knife
+ * @link https://github.com/eaglesakura/armyknife-runtime
  */
+@Deprecated("replace to 'io.github.eaglesakura.lazysingleton'")
 class OneshotRunner<T> {
     private val lock = ReentrantLock()
 

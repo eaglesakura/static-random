@@ -1,5 +1,6 @@
 package com.eaglesakura.armyknife.runtime.extensions
 
+import kotlin.math.min
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.delay
 
@@ -29,7 +30,7 @@ suspend fun <T> withRetry(
         }
 
         delay(currentDelay.toLong())
-        currentDelay = Math.min(currentDelay * backOff, maxDelay.toDouble())
+        currentDelay = min(currentDelay * backOff, maxDelay.toDouble())
         ++run
     } while (run < times)
 

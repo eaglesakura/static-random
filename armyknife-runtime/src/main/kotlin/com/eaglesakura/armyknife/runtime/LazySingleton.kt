@@ -21,8 +21,10 @@ import kotlin.concurrent.withLock
  * }
  *
  * @author @eaglesakura
- * @link https://github.com/eaglesakura/army-knife
+ * @link https://github.com/eaglesakura/armyknife-runtime
+ * @link https://github.com/eaglesakura/lazysingleton
  */
+@Deprecated("split to 'io.github.eaglesakura.lazysingleton'")
 class LazySingleton<T> {
     private var instance: T? = null
 

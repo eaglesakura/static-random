@@ -4,7 +4,7 @@ package com.eaglesakura.armyknife.runtime
  * Returns random value.
  *
  * @author @eaglesakura
- * @link https://github.com/eaglesakura/army-knife
+ * @link https://github.com/eaglesakura/armyknife-runtime
  */
 @Suppress("MemberVisibilityCanBePrivate", "unused")
 object Random {
